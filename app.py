@@ -91,6 +91,7 @@ scheduler.add_task(300, update_bobor_status)
 scheduler.add_task(300, update_sauna_status)
 scheduler.start()
 
+
 @app.route("/api")
 @limiter.limit("100 per minute")
 def get_bobor_status() -> FlaskResponse | tuple[FlaskResponse, int]:
